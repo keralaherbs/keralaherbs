@@ -9,11 +9,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (menuToggle && navLinksMenu) {
     menuToggle.addEventListener('click', () => {
-      navLinksMenu.classList.toggle('active');
+      const isActive = navLinksMenu.classList.toggle('active');
+      
+      // Force solid white background and dark text dynamically to bypass any caching
+      if (isActive) {
+        navLinksMenu.style.setProperty('background-color', '#ffffff', 'important');
+        navLinksMenu.style.setProperty('background', '#ffffff', 'important');
+        navLinksMenu.style.setProperty('opacity', '1', 'important');
+        navLinksMenu.style.setProperty('visibility', 'visible', 'important');
+        
+        navLinks.forEach(link => {
+          link.style.setProperty('color', '#1e293b', 'important');
+        });
+      } else {
+        navLinksMenu.style.removeProperty('background-color');
+        navLinksMenu.style.removeProperty('background');
+        navLinksMenu.style.removeProperty('opacity');
+        navLinksMenu.style.removeProperty('visibility');
+        
+        navLinks.forEach(link => {
+          link.style.removeProperty('color');
+        });
+      }
       
       // Animate hamburger menu lines
       const spans = menuToggle.querySelectorAll('span');
-      if (navLinksMenu.classList.contains('active')) {
+      if (isActive) {
         spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
         spans[1].style.opacity = '0';
         spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
@@ -28,6 +49,17 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         navLinksMenu.classList.remove('active');
+        
+        // Reset dynamic styles
+        navLinksMenu.style.removeProperty('background-color');
+        navLinksMenu.style.removeProperty('background');
+        navLinksMenu.style.removeProperty('opacity');
+        navLinksMenu.style.removeProperty('visibility');
+        
+        navLinks.forEach(link => {
+          link.style.removeProperty('color');
+        });
+        
         const spans = menuToggle.querySelectorAll('span');
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
