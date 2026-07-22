@@ -504,105 +504,73 @@ a {
   border-radius: var(--radius-full);
 }
 
-/* Wisdom & Sourcing Section */
+/* Wisdom & Sourcing Section (Brief & Compact) */
 .wisdom-section {
   background-color: var(--bg-white);
   border-bottom: 1px solid var(--border-color);
 }
 
-.wisdom-grid {
+.wisdom-brief-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 30px;
 }
 
 @media (max-width: 1200px) {
-  .wisdom-grid {
+  .wisdom-brief-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 }
 
 @media (max-width: 650px) {
-  .wisdom-grid {
+  .wisdom-brief-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
-.wisdom-card {
-  background-color: var(--bg-cream);
-  padding: 36px 28px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
+.wisdom-brief-item {
   display: flex;
-  flex-direction: column;
-  height: 100%;
-  transition: var(--transition);
+  align-items: flex-start;
+  gap: 16px;
+  padding: 10px 0;
 }
 
-.wisdom-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--secondary);
-  box-shadow: var(--shadow-lg);
-  background-color: var(--bg-white);
-}
-
-.wisdom-icon-box {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: var(--primary);
-  color: var(--secondary);
+.wisdom-brief-icon {
+  background-color: var(--accent-light);
+  color: var(--primary);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  margin-bottom: 24px;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
   transition: var(--transition);
 }
 
-.wisdom-card:hover .wisdom-icon-box {
-  background-color: var(--secondary);
-  color: var(--primary);
+.wisdom-brief-item:hover .wisdom-brief-icon {
+  background-color: var(--primary);
+  color: var(--text-light);
+  transform: translateY(-2px);
 }
 
-.wisdom-card h3 {
-  font-size: 1.25rem;
+.wisdom-brief-content h3 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 12px;
   color: var(--primary-dark);
+  margin-bottom: 4px;
 }
 
-.wisdom-card p {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-
-.wisdom-card-list {
-  list-style: none;
-  margin-top: auto;
-  border-top: 1px solid rgba(27, 67, 50, 0.08);
-  padding-top: 16px;
-}
-
-.wisdom-card-list li {
+.wisdom-brief-content p {
   font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-
-.wisdom-card-list li:last-child {
-  margin-bottom: 0;
-}
-
-.wisdom-card-list li i {
-  color: var(--accent);
-  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+  margin: 0;
 }
 
 /* Products Section */
