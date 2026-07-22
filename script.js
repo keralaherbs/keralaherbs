@@ -59,6 +59,99 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
+  // 1b. Hero Slider Control
+  // ==========================================
+  const slides = document.querySelectorAll('.slide');
+  const dotsContainer = document.getElementById('slider-dots');
+  const prevBtn = document.getElementById('slider-prev-btn');
+  const nextBtn = document.getElementById('slider-next-btn');
+  let currentSlideIndex = 0;
+  let slideInterval;
+
+  if (slides.length > 0) {
+    // Generate navigation dots dynamically
+    slides.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.classList.add('slider-dot');
+      if (index === 0) dot.classList.add('active');
+      dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+      dot.addEventListener('click', () => {
+        goToSlide(index);
+        resetSlideTimer();
+      });
+      if (dotsContainer) dotsContainer.appendChild(dot);
+    });
+
+    const updateDots = () => {
+      const dots = document.querySelectorAll('.slider-dot');
+      dots.forEach((dot, index) => {
+        if (index === currentSlideIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    };
+
+    const goToSlide = (index) => {
+      slides[currentSlideIndex].classList.remove('active');
+      currentSlideIndex = (index + slides.length) % slides.length;
+      slides[currentSlideIndex].classList.add('active');
+      updateDots();
+    };
+
+    const nextSlide = () => {
+      goToSlide(currentSlideIndex + 1);
+    };
+
+    const prevSlide = () => {
+      goToSlide(currentSlideIndex - 1);
+    };
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetSlideTimer();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetSlideTimer();
+      });
+    }
+
+    // Auto rotate slides
+    const startSlideTimer = () => {
+      slideInterval = setInterval(nextSlide, 6000);
+    };
+
+    const resetSlideTimer = () => {
+      clearInterval(slideInterval);
+      startSlideTimer();
+    };
+
+    startSlideTimer();
+
+    // CTA triggers from slides to filter tabs
+    const filterTriggers = document.querySelectorAll('.js-filter-trigger');
+    filterTriggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const filterVal = trigger.getAttribute('data-filter');
+        const targetBtn = document.querySelector(`.filter-btn[data-category="${filterVal}"]`);
+        if (targetBtn) {
+          targetBtn.click();
+          const productsSection = document.getElementById('products');
+          if (productsSection) {
+            productsSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  }
+
+  // ==========================================
   // 2. Product Category Filtering
   // ==========================================
   const filterButtons = document.querySelectorAll('.filter-btn');
