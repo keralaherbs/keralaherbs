@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="100%" height="100%">
+  <!-- Definitions for gradients and drop shadows -->
+  <defs>
+    <!-- Forest Green Gradient -->
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D6A4F" />
+      <stop offset="100%" stop-color="#1B4332" />
+    </linearGradient>
+    
+    <!-- Premium Gold Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F4D03F" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#9A7B1C" />
+    </linearGradient>
+    
+    <!-- Soft Drop Shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Left: Brand Icon (Leaf and Circle Shield) -->
+  <g transform="translate(10, 10)">
+    <!-- Outer Golden Circle Accent -->
+    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" />
+    
+    <!-- Inner Forest Green Background Circle -->
+    <circle cx="50" cy="50" r="40" fill="url(#greenGrad)" filter="url(#shadow)" />
+    
+    <!-- Stylized Leaf Motif (Ayurvedic/Nature Concept) -->
+    <!-- Center Vein -->
+    <path d="M 50 22 C 50 45 50 65 50 78" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" fill="none" />
+    
+    <!-- Right Leaf Half -->
+    <path d="M 50 22 C 68 35 72 60 50 78" fill="url(#goldGrad)" opacity="0.9" />
+    
+    <!-- Left Leaf Half -->
+    <path d="M 50 22 C 32 35 28 60 50 78" fill="url(#goldGrad)" opacity="0.75" />
+    
+    <!-- Small Decorative Gold Dots -->
+    <circle cx="50" cy="18" r="2.5" fill="url(#goldGrad)" />
+    <circle cx="50" cy="82" r="2.5" fill="url(#goldGrad)" />
+  </g>
+
+  <!-- Right: Elegant Brand Typography -->
+  <!-- Main Brand Name -->
+  <text x="120" y="58" font-family="'Playfair Display', 'Georgia', 'Times New Roman', serif" font-size="34" font-weight="bold" fill="#1B4332">
+    KERALA
+  </text>
+  <text x="262" y="58" font-family="'Playfair Display', 'Georgia', 'Times New Roman', serif" font-size="34" font-weight="normal" fill="#D4AF37">
+    HERBS
+  </text>
+  
+  <!-- Subtitle / Tagline -->
+  <text x="122" y="82" font-family="'Plus Jakarta Sans', 'Segoe UI', 'Arial', sans-serif" font-size="11" font-weight="600" letter-spacing="4" fill="#52B788">
+    AYURVEDIC WELLNESS &amp; PURITY
+  </text>
+</svg>
