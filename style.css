@@ -202,7 +202,7 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 200; /* Set high z-index to stay on top of slides */
   border-bottom: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
 }
@@ -321,6 +321,7 @@ a {
     gap: 24px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
+    z-index: 199; /* Position below header but above slide elements */
   }
   
   .nav-links.active {
