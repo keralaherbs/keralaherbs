@@ -217,12 +217,19 @@ a {
 .logo-link {
   display: flex;
   align-items: center;
-  height: 50px;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
 }
 
 .logo-img {
+  width: 100%;
   height: 100%;
-  width: auto;
+  object-fit: contain;
+  transform: scale(1.35); /* Zoom in to crop white padding */
+  transition: var(--transition);
 }
 
 .nav-links {
@@ -331,12 +338,16 @@ a {
   height: 650px;
   overflow: hidden;
   color: var(--text-light);
+  margin-top: -80px; /* Pull slider up under the sticky header */
+  padding-top: 80px;  /* Push slide content back down to offset the header overlap */
 }
 
 @media (max-width: 768px) {
   .hero-slider-section {
     height: auto;
     min-height: 520px;
+    margin-top: -80px;
+    padding-top: 80px;
   }
 }
 
@@ -356,6 +367,9 @@ a {
   visibility: hidden;
   display: flex;
   align-items: center;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
 }
