@@ -1567,3 +1567,14 @@ a {
 .contact-info-text a:hover {
   color: var(--primary);
 }
+
+/* ==========================================
+   Instagram Widget Grid Styles
+   ========================================== */
+.instagram-post-card:hover .instagram-overlay {
+  opacity: 1 !important;
+}
+
+.instagram-post-card:hover img {
+  transform: scale(1.06);
+}
