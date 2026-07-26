@@ -3,229 +3,448 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kerala Herbs - Website Coming Soon</title>
+  <title>Kerala Herbs | Premium Authentic Ayurvedic Remedies & Wellness</title>
+  
+  <!-- Favicon -->
   <link rel="shortcut icon" href="assets/logo.png" type="image/png">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Kerala Herbs offers premium authentic Ayurvedic remedies, supplements, and skin/hair care products sourced directly from Kerala, India. Shop our remedies online.">
+  <meta name="keywords" content="Kerala Herbs, Ayurveda, Ayurvedic remedies, L-Glutathione tablets, tan removal cream, herbal hair removal, hair growth oil, Glu Von, Pure Glow, Herba Smooth, Nutri Hair Oil">
+  <meta name="author" content="Kerala Herbs">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thekeralaherbs.com/index.html">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Kerala Herbs | Premium Authentic Ayurvedic Remedies &amp; Wellness">
+  <meta property="og:description" content="Explore authentic, premium Ayurvedic remedies from Kerala. Shop GLU-VON L-Glutathione tablets, Pure Glow tan cream, Herba Smooth hair powder, and Nutri Hair Oil.">
+  <meta property="og:image" content="https://thekeralaherbs.com/assets/logo.png">
+  <meta property="og:url" content="https://thekeralaherbs.com/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kerala Herbs">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kerala Herbs | Premium Ayurvedic Remedies">
+  <meta name="twitter:description" content="Experience premium Ayurvedic wellness remedies from Kerala. Direct WhatsApp shopping and shipping across India.">
+  <meta name="twitter:image" content="https://thekeralaherbs.com/assets/logo.png">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Kerala Herbs",
+    "image": "https://thekeralaherbs.com/assets/logo.png",
+    "@id": "https://thekeralaherbs.com/#localbusiness",
+    "url": "https://thekeralaherbs.com/index.html",
+    "telephone": "+919539716715",
+    "email": "info@thekeralaherbs.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Vyapar Bhavan, KP Vallon Rd, Giringar Housing Colony, Jn, Kadavanthra",
+      "addressLocality": "Kochi",
+      "addressRegion": "Kerala",
+      "postalCode": "682020",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://www.facebook.com/p/Kerala-Herbs-61570918526560/",
+      "https://www.instagram.com/kerala_herbs_/"
+    ]
+  }
+  </script>
+  
+  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=2.2">
+  
   <style>
-    /* Direct inline styles for instant loading and failsafe rendering */
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap');
-    
-    :root {
-      --primary: #1b4332;
-      --primary-dark: #081c15;
-      --secondary: #d4af37;
-      --text-light: #ffffff;
-      --text-muted: #a3b19b;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: radial-gradient(circle at center, var(--primary) 0%, var(--primary-dark) 100%);
-      color: var(--text-light);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      padding: 40px 20px;
-      overflow-x: hidden;
-      position: relative;
-    }
-    
-    /* Background nature overlay decoration */
-    body::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1470&auto=format&fit=crop') no-repeat center center/cover;
-      opacity: 0.12;
-      z-index: 1;
-      pointer-events: none;
-    }
-    
-    .container {
-      max-width: 600px;
-      width: 100%;
-      text-align: center;
-      z-index: 2;
-      margin: auto;
-    }
-    
-    /* Card panel container */
-    .card {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
-      padding: 50px 30px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-      margin-bottom: 30px;
-      animation: fadeInUp 1s ease-out;
-    }
-    
-    /* Logo container styling */
-    .logo-container {
-      width: 130px;
-      height: 130px;
-      background: #ffffff;
-      border-radius: 50%;
-      margin: 0 auto 30px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      border: 3px solid var(--secondary);
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .logo-img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      transform: scale(1.35); /* Zoom in to crop padding, matching main site */
-    }
-    
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
-    }
-    
-    h1 span {
-      color: var(--secondary);
-      display: block;
-      font-size: 1.1rem;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      margin-top: 10px;
-      font-weight: 600;
-    }
-    
-    .tagline {
-      font-size: 1.2rem;
-      color: var(--secondary);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
-    }
-    
-    .description {
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: var(--text-muted);
-      margin-bottom: 35px;
-    }
-    
-    /* CTA button to WhatsApp */
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background-color: #25d366; /* WhatsApp green */
-      color: #ffffff;
-      padding: 14px 30px;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 1.05rem;
-      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
-      transition: all 0.3s ease;
-    }
-    
-    .cta-btn:hover {
-      background-color: #1ebd58;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 25px rgba(37, 211, 102, 0.35);
-    }
-    
-    /* Address section */
-    .footer {
-      z-index: 2;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      max-width: 500px;
-      line-height: 1.5;
-    }
-    
-    .footer i {
-      color: var(--secondary);
-      margin-right: 5px;
-    }
-    
-    .footer-divider {
-      width: 40px;
-      height: 1px;
-      background: var(--secondary);
-      margin: 15px auto;
-      opacity: 0.5;
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @media (max-width: 576px) {
-      .card {
-        padding: 40px 20px;
-      }
-      h1 {
-        font-size: 2rem;
+    @media (max-width: 992px) {
+      #nav-links-menu.nav-links {
+        background-color: #ffffff !important;
+        background: #ffffff !important;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="card">
-      <div class="logo-container">
+  <!-- Header / Navigation Bar -->
+  <header class="header" id="home">
+    <div class="container nav-container">
+      <a href="#home" class="logo-link" id="nav-logo-link">
         <img src="assets/logo.png" alt="Kerala Herbs Logo" class="logo-img">
+      </a>
+      
+      <nav>
+        <ul class="nav-links" id="nav-links-menu">
+          <li><a href="index.html" class="nav-link active" id="link-home">Home</a></li>
+          <li><a href="products.html" class="nav-link" id="link-products">Products</a></li>
+          <li><a href="about.html" class="nav-link" id="link-about">Our Story</a></li>
+          <li><a href="contact.html" class="nav-link" id="link-contact">Contact Support</a></li>
+        </ul>
+      </nav>
+      
+      <button class="mobile-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Banner Slider Section -->
+  <section class="hero-slider-section" id="hero-slider">
+    <div class="slider-container">
+      
+      <!-- Slide 1: General Brand Slogan -->
+      <div class="slide active" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.65), rgba(8, 28, 21, 0.85)), url('assets/all_products_slide.jpg');">
+        <div class="container">
+          <div class="slide-content">
+            <div class="hero-badge-container">
+              <div class="hero-badge-dot"></div>
+              <span class="hero-badge-text">Trusted Across India</span>
+            </div>
+            <h1>Pure Kerala Ayurveda <span>For Modern Living</span></h1>
+            <p>Bringing you the authentic healing traditions of Kerala. Inspired by centuries-old Ayurvedic wisdom, we offer premium herbal products made with carefully selected natural ingredients and time-tested formulations.</p>
+            <div class="hero-ctas">
+              <a href="products.html" class="btn btn-primary">Explore Our Remedies <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="about.html" class="btn btn-secondary" style="color: white; border-color: rgba(255,255,255,0.45);">Our Story</a>
+            </div>
+          </div>
+        </div>
       </div>
       
-      <p class="tagline">Kerala Herbs</p>
-      <h1>Website Coming Soon<span>Authentic Ayurvedic Purity</span></h1>
+      <!-- Slide 2: Hair Care Highlight -->
+      <div class="slide" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.65), rgba(8, 28, 21, 0.85)), url('assets/nutri_hair_oil_slide.jpg');">
+        <div class="container">
+          <div class="slide-content">
+            <div class="hero-badge-container">
+              <div class="hero-badge-dot"></div>
+              <span class="hero-badge-text">100% Herbal Hair Nourishment</span>
+            </div>
+            <h1>Nourish Your Hair <span>From Root To Tip</span></h1>
+            <p>Infused with organic Bhringraj, Amla, Brahmi, and 21 rare active herbs. Our Nutri Hair Oil stops hair fall, treats dry scalp, and stimulates deep, healthy growth naturally.</p>
+            <div class="hero-ctas">
+              <a href="products.html" class="btn btn-primary">Shop Nutri Hair Oil <i class="fa-solid fa-basket-shopping"></i></a>
+              <a href="https://wa.me/917994023463?text=Hi%20Kerala%20Herbs!%20I%27d%20like%20to%20order%20NUTRI%20HAIR%20OIL%20for%20healthy%20and%20strong%20hair.%20Please%20share%20details%20on%20price%20and%20delivery." target="_blank" class="btn btn-secondary" style="color: white; border-color: rgba(255,255,255,0.45);"><i class="fa-brands fa-whatsapp"></i> Buy Direct</a>
+            </div>
+          </div>
+        </div>
+      </div>
       
-      <div style="width: 50px; height: 2px; background: var(--secondary); margin: 20px auto 25px auto;"></div>
+      <!-- Slide 3: Skin Care Highlight -->
+      <div class="slide" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.65), rgba(8, 28, 21, 0.85)), url('assets/pure_glow_slide.jpg');">
+        <div class="container">
+          <div class="slide-content">
+            <div class="hero-badge-container">
+              <div class="hero-badge-dot"></div>
+              <span class="hero-badge-text">Radiant &amp; Spotless Skin</span>
+            </div>
+            <h1>Unlock Your Skin's <span>Natural Glow</span></h1>
+            <p>Explore our premium skin remedies: GLU VON glutathione effervescent tablets for brightness, PURE GLOW for tan removal, and HERBA SMOOTH for painless, natural hair removal.</p>
+            <div class="hero-ctas">
+              <a href="products.html" class="btn btn-primary">Explore Skin Care <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://wa.me/919037583804?text=Hi%20Kerala%20Herbs!%20I%27d%20like%20to%20order%20PURE%20GLOW%20for%20skin%20tan%20removal%20and%20glow.%20Please%20share%20details%20on%20price%20and%20delivery." target="_blank" class="btn btn-secondary" style="color: white; border-color: rgba(255,255,255,0.45);"><i class="fa-brands fa-whatsapp"></i> Buy Pure Glow</a>
+            </div>
+          </div>
+        </div>
+      </div>
       
-      <p class="description">
-        Bringing the authentic healing traditions of Kerala and premium, time-tested Ayurvedic formulations to wellness seekers all over India. We are polishing our store to bring you the finest herbal experience.
-      </p>
+    </div>
+    
+    <!-- Slider Navigation Controls -->
+    <button class="slider-arrow arrow-left" aria-label="Previous Slide" id="slider-prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="slider-arrow arrow-right" aria-label="Next Slide" id="slider-next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+    
+    <!-- Slider Pagination Dots -->
+    <div class="slider-dots-container" id="slider-dots"></div>
+  </section>
+
+  <!-- Pillars of Purity Section (Brief & Compact) -->
+  <section class="wisdom-section" id="wisdom" style="padding: 30px 0; border-bottom: 1px solid var(--border-color); background-color: var(--bg-white);">
+    <div class="container">
+      <div class="wisdom-brief-grid">
+        
+        <div class="wisdom-brief-item">
+          <div class="wisdom-brief-icon"><i class="fa-solid fa-leaf"></i></div>
+          <div class="wisdom-brief-content">
+            <h3>100% Organic</h3>
+            <p>Pure wild-harvested Kerala herbs.</p>
+          </div>
+        </div>
+        
+        <div class="wisdom-brief-item">
+          <div class="wisdom-brief-icon"><i class="fa-solid fa-scroll"></i></div>
+          <div class="wisdom-brief-content">
+            <h3>Ayurvedic Wisdom</h3>
+            <p>Authentic, time-tested formulations.</p>
+          </div>
+        </div>
+        
+        <div class="wisdom-brief-item">
+          <div class="wisdom-brief-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="wisdom-brief-content">
+            <h3>Certified Purity</h3>
+            <p>100% natural, chemical-free ingredients.</p>
+          </div>
+        </div>
+        
+        <div class="wisdom-brief-item">
+          <div class="wisdom-brief-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <div class="wisdom-brief-content">
+            <h3>Nationwide Shipping</h3>
+            <p>Tracked delivery all over India.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Offers / Combos Section (Home Page) -->
+  <section class="offer-section" id="offers">
+    <div class="container">
+      <div class="section-header">
+        <h2>Special Combo Offers</h2>
+        <p>Save even more with our specially curated wellness kits designed for a complete radiant skin transformation.</p>
+      </div>
+
+      <div class="offer-grid">
+        
+        <!-- Combo 1: 2 Glu-Von + 1 Pure Glow -->
+        <div class="offer-card">
+          <div class="offer-img-box">
+            <span class="offer-badge">Best Value</span>
+            <img src="assets/combo_1.jpg" alt="2 Bottles Glu-Von &amp; 1 Pure Glow Combo" class="offer-img" loading="lazy">
+          </div>
+          <div class="offer-info">
+            <h3 class="offer-title">Herbal Wellness Combo (3-Pack)</h3>
+            <p class="offer-desc">Get 2 Bottles of GLU-VON L-Glutathione Skin Radiance Tablets (30 tablets total) and 1 Jar of PURE GLOW Hyperpigmentation Cream. The complete regime for ultimate skin health, spot reduction, and glowing skin.</p>
+            <div class="offer-price-row">
+              <span class="offer-price-current">₹1,999</span>
+              <span class="offer-price-original">₹2,500</span>
+              <span class="offer-price-save">Save 20%</span>
+            </div>
+            <a href="https://wa.me/919539716715?text=Hi%20Kerala%20Herbs!%20I%27d%20like%20to%20order%20the%203-Pack%20Herbal%20Wellness%20Combo%20%282%20GLU-VON%20%2B%201%20Pure%20Glow%20for%20%E2%82%B91999%29.%20Please%20share%20payment%20and%20delivery%20details." target="_blank" class="btn btn-whatsapp" style="width: 100%; text-align: center; justify-content: center;">
+              <i class="fa-brands fa-whatsapp"></i> Order Combo on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Combo 2: 1 Glu-Von + 1 Pure Glow -->
+        <div class="offer-card">
+          <div class="offer-img-box">
+            <span class="offer-badge">Popular Combo</span>
+            <img src="assets/combo_2.jpg" alt="1 Bottle Glu-Von &amp; 1 Pure Glow Combo" class="offer-img" loading="lazy">
+          </div>
+          <div class="offer-info">
+            <h3 class="offer-title">Radiance Duo Combo (2-Pack)</h3>
+            <p class="offer-desc">Get 1 Bottle of GLU-VON L-Glutathione Radiance Tablets (15 tablets) and 1 Jar of PURE GLOW Cream. Perfect starter kit to experience the synergetic healing power of internal tablets and topical cream.</p>
+            <div class="offer-price-row">
+              <span class="offer-price-current">₹1,499</span>
+              <span class="offer-price-original">₹2,000</span>
+              <span class="offer-price-save">Save 25%</span>
+            </div>
+            <a href="https://wa.me/919539716715?text=Hi%20Kerala%20Herbs!%20I%27d%20like%20to%20order%20the%202-Pack%20Radiance%20Duo%20Combo%20%281%20GLU-VON%20%2B%201%20Pure%20Glow%20for%20%E2%82%B91499%29.%20Please%20share%20payment%20and%20delivery%20details." target="_blank" class="btn btn-whatsapp" style="width: 100%; text-align: center; justify-content: center;">
+              <i class="fa-brands fa-whatsapp"></i> Order Combo on WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 50px;">
+        <a href="products.html" class="btn btn-primary" style="padding: 16px 36px; border-radius: var(--radius-sm);">View All Products <i class="fa-solid fa-basket-shopping" style="margin-left: 8px;"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="section-padding story-section" id="about">
+    <div class="container story-grid">
+      <div class="story-image-box">
+        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=687&auto=format&fit=crop" alt="Ayurvedic Preparation" class="story-img">
+        <div class="story-badge-overlay">
+          <div class="story-badge-num">100%</div>
+          <div class="story-badge-txt">Pure Kerala Ayurvedic Traditions</div>
+        </div>
+      </div>
       
-      <a href="https://wa.me/919539716715?text=Hi%20Kerala%20Herbs!%20I%20saw%20your%20coming%20soon%20page.%20Please%20let%20me%20know%20when%20you%20are%20live%2C%20I%20have%20some%20questions%20about%20your%20products!" target="_blank" class="cta-btn">
-        <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Contact Support on WhatsApp
-      </a>
+      <div class="story-content">
+        <span class="badge badge-tag" style="margin-bottom: 12px;">Our Heritage</span>
+        <h2>Honoring Ayurvedic Wisdom</h2>
+        <p><strong>Established in 2021</strong>, Kerala Herbs was founded by a team of dynamic youngsters with deep knowledge in the Ayurvedic field who came together to bring the authentic healing traditions of Kerala to the Indian market. Inspired by centuries-old Ayurvedic wisdom, we offer premium herbal products made with carefully selected natural ingredients and time-tested formulations. Our commitment to quality, purity, and effectiveness ensures that every product supports a healthier, more balanced lifestyle.</p>
+        <p>At Kerala Herbs, we believe in the power of nature to promote wellness. From daily health supplements and herbal remedies to personal care and wellness solutions, our products are crafted with the highest standards of quality and authenticity. Our mission is to make genuine Kerala Ayurveda accessible to everyone while preserving its rich heritage for future generations.</p>
+        
+        <div style="margin-top: 30px;">
+          <a href="about.html" class="btn btn-primary" style="padding: 12px 28px; border-radius: var(--radius-sm);">Read Our Full Story <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section-padding testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Customers Say</h2>
+        <p>Hear from people across India who have transformed their wellness and beauty routines with Kerala Herbs.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- Review 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="testimonial-text">"GLU VON effervescent tablets are amazing. I've been taking them for a month and my skin tone looks noticeably brighter and even. The strawberry flavor is delicious too!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SR</div>
+            <div class="author-info">
+              <h4>Sneha Rajan</h4>
+              <p><i class="fa-solid fa-location-dot"></i> Kochi, Kerala</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Review 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="testimonial-text">"I had severe hair fall and dry roots. Using the Nutri Hair Oil twice a week has restored my hair density and volume. It smells wonderful and contains real herbs."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AM</div>
+            <div class="author-info">
+              <h4>Arjun Mehta</h4>
+              <p><i class="fa-solid fa-location-dot"></i> Mumbai, Maharashtra</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="testimonial-text">"Pure Glow is the absolute best tan removal cream. I use it after outdoor trips and the sun tanning disappears overnight without drying out my face. Absolutely pure stuff!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">PK</div>
+            <div class="author-info">
+              <h4>Priya Kapoor</h4>
+              <p><i class="fa-solid fa-location-dot"></i> New Delhi, NCR</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Footer Section -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-info-brand">
+          <h3>Kerala <span>Herbs</span></h3>
+          <p>A trusted brand delivering authentic, high-quality Ayurvedic formulations and wellness supplements from Kerala to customers across India.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/p/Kerala-Herbs-61570918526560/" target="_blank" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/kerala_herbs_/" target="_blank" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Useful Links -->
+        <div>
+          <h4 class="footer-links-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Our Products</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact details & Map -->
+        <div>
+          <h4 class="footer-links-title">Get In Touch</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Vyapar Bhavan, KP Vallon Rd, Giringar Housing Colony, Jn, Kadavanthra, Ernakulam, Kochi, Kerala 682020</p>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <p>info@thekeralaherbs.com</p>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <p>+91 95397 16715</p>
+          </div>
+          
+          <!-- Embedded Google Map -->
+          <div class="footer-map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.3524673628795!2d76.29749507503099!3d9.962835890140778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d3cecd44927%3A0xe546b5a32ec485fe!2sKP%20Vallon%20Rd%2C%20Kadavanthra%2C%20Kochi%2C%20Ernakulam%2C%20Kerala%20682020!5e0!3m2!1sen!2sin!4v1710928238423!5m2!1sen!2sin" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Bottom Bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Kerala Herbs. All Rights Reserved. Designed by <a href="https://vcode.in/" target="_blank" style="color: var(--secondary); text-decoration: none; font-weight: 700;">VCODE TECHNOLOGIES</a>.</p>
+        <p>Products shipped across India.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Chat Widget -->
+  <div class="wa-widget" id="whatsapp-widget">
+    <!-- Floating Button -->
+    <div class="wa-btn" id="wa-btn-toggle" aria-label="Open Chat Support">
+      <i class="fa-brands fa-whatsapp"></i>
+      <div class="wa-btn-badge" id="wa-badge"></div>
+    </div>
+
+    <!-- Chat Popup Panel -->
+    <div class="wa-popup" id="wa-popup-panel">
+      <div class="wa-popup-header">
+        <div class="wa-popup-profile">
+          <div class="wa-profile-avatar">
+            KH
+            <div class="wa-profile-avatar-active"></div>
+          </div>
+          <div class="wa-profile-info">
+            <h4>Kerala Herbs Support</h4>
+            <p>Typically replies in minutes</p>
+          </div>
+        </div>
+        <button class="wa-popup-close" id="wa-popup-close-btn" aria-label="Close Chat Window">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="wa-popup-body">
+        <div class="wa-chat-bubble">
+          Namaste! 🙏 Welcome to Kerala Herbs. How can we help you today with your wellness journey?
+          <span class="wa-chat-time" id="chat-time-stamp">14:32</span>
+        </div>
+      </div>
+
+      <div class="wa-popup-footer">
+        <a href="https://wa.me/919539716715?text=Hi%20Kerala%20Herbs!%20I%20have%20some%20questions%20about%20your%20Ayurvedic%20products.%20Can%20you%20please%20help%20me%3F" target="_blank" class="btn btn-whatsapp" style="width: 100%; border-radius: var(--radius-md); padding: 10px;" id="wa-popup-start-chat-btn">
+          <i class="fa-brands fa-whatsapp"></i> Start Chat
+        </a>
+      </div>
     </div>
   </div>
 
-  <div class="footer">
-    <p><i class="fa-solid fa-location-dot"></i> Vyapar Bhavan, KP Vallon Rd, Kadavanthra, Ernakulam, Kochi, Kerala 682020</p>
-    <div class="footer-divider"></div>
-    <p>&copy; 2026 Kerala Herbs. All Rights Reserved.</p>
-  </div>
-
+  <!-- Javascript File -->
+  <script src="script.js"></script>
 </body>
 </html>
