@@ -288,4 +288,110 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, 3000);
   }
+
+  // ==========================================
+  // 4. Modal WhatsApp Order Form
+  // ==========================================
+  const orderModal = document.getElementById('orderModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const orderForm = document.getElementById('orderForm');
+  
+  const modalProductName = document.getElementById('modalProductName');
+  const modalTargetNumber = document.getElementById('modalTargetNumber');
+  const modalProductOption = document.getElementById('modalProductOption');
+  const modalOptionContainer = document.getElementById('modalOptionContainer');
+  const modalQuantity = document.getElementById('modalQuantity');
+  const customerName = document.getElementById('customerName');
+  const customerPhone = document.getElementById('customerPhone');
+  const customerAddress = document.getElementById('customerAddress');
+
+  if (orderModal) {
+    // Intercept click on any button with order-trigger class
+    document.querySelectorAll('.order-trigger').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const product = button.getAttribute('data-product');
+        const number = button.getAttribute('data-number');
+        const optionsString = button.getAttribute('data-options');
+        
+        if (modalProductName) modalProductName.value = product;
+        if (modalTargetNumber) modalTargetNumber.value = number;
+        
+        // Clear previous options
+        if (modalProductOption) {
+          modalProductOption.innerHTML = '';
+          if (optionsString) {
+            const options = optionsString.split(',');
+            options.forEach(opt => {
+              const el = document.createElement('option');
+              el.value = opt.trim();
+              el.textContent = opt.trim();
+              modalProductOption.appendChild(el);
+            });
+            if (modalOptionContainer) modalOptionContainer.style.display = 'block';
+          } else {
+            if (modalOptionContainer) modalOptionContainer.style.display = 'none';
+          }
+        }
+        
+        // Open modal
+        orderModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close modal
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener('click', () => {
+        orderModal.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
+
+    // Close on clicking overlay background
+    orderModal.addEventListener('click', (e) => {
+      if (e.target === orderModal) {
+        orderModal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Submit and redirect to WhatsApp
+    if (orderForm) {
+      orderForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const product = modalProductName.value;
+        const number = modalTargetNumber.value;
+        const quantity = modalQuantity.value;
+        const option = modalProductOption && modalProductOption.value ? ` (${modalProductOption.value})` : '';
+        const name = customerName.value.trim();
+        const phone = customerPhone.value.trim();
+        const address = customerAddress.value.trim();
+        
+        const textMessage = `🌿 NEW ORDER - KERALA HERBS 🌿
+---------------------------------
+Product: ${product}${option}
+Quantity: ${quantity}
+
+CUSTOMER DETAILS:
+Name: ${name}
+Phone: ${phone}
+Delivery Address:
+${address}
+---------------------------------
+Please confirm my order and share payment details. Thank you!`;
+        
+        const encodedText = encodeURIComponent(textMessage);
+        const whatsappUrl = `https://wa.me/${number}?text=${encodedText}`;
+        
+        window.open(whatsappUrl, '_blank');
+        
+        orderModal.style.display = 'none';
+        document.body.style.overflow = '';
+        orderForm.reset();
+      });
+    }
+  }
 });

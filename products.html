@@ -192,7 +192,7 @@
             <div class="product-price-row">
               <span class="price-current">₹780 - ₹1,500</span>
             </div>
-            <a href="https://wa.me/919207167156?text=Hi%20Kerala%20Herbs!%20I%27d%20like%20to%20order%20GLU%20VON%20tablets.%20Please%20share%20details%20for%20Single%20%28%E2%82%B9780%29%20or%20Double%20%28%E2%82%B91500%29%20course." target="_blank" class="btn btn-whatsapp" id="btn-buy-gluvon">
+            <a href="#" class="btn btn-whatsapp order-trigger" id="btn-buy-gluvon" data-product="GLU VON" data-number="919207167156" data-options="Single (15 Days Course - 1 Bottle) - ₹780,Double (30 Days Course - 2 Bottles) - ₹1500">
               <i class="fa-brands fa-whatsapp"></i> Buy Now via WhatsApp
             </a>
           </div>
@@ -225,7 +225,7 @@
               <span class="price-original">₹1,199</span>
               <span class="price-save">Save ₹600</span>
             </div>
-            <a href="https://wa.me/919074399057?text=Hi%20Kerala%20Herbs!%20I%27d%20like%20to%20order%20PURE%20GLOW%20cream%20%28for%20%E2%82%B9599%29.%20Please%20share%20details%20on%20price%20and%20delivery." target="_blank" class="btn btn-whatsapp" id="btn-buy-pureglow">
+            <a href="#" class="btn btn-whatsapp order-trigger" id="btn-buy-pureglow" data-product="PURE GLOW" data-number="919074399057" data-options="Standard Size (50 GM) - ₹599">
               <i class="fa-brands fa-whatsapp"></i> Buy Now via WhatsApp
             </a>
           </div>
@@ -258,7 +258,7 @@
               <span class="price-original">₹660</span>
               <span class="price-save">Save ₹80</span>
             </div>
-            <a href="https://wa.me/918137993739?text=Hi%20Kerala%20Herbs!%20I%27d%20like%20to%20order%20HERBA%20SMOOTH%20hair%20removal%20powder%20%28for%20%E2%82%B9580%29.%20Please%20share%20details%20on%20price%20and%20delivery." target="_blank" class="btn btn-whatsapp" id="btn-buy-herbasmooth">
+            <a href="#" class="btn btn-whatsapp order-trigger" id="btn-buy-herbasmooth" data-product="HERBA SMOOTH" data-number="918137993739" data-options="Standard Size (50 GM) - ₹580">
               <i class="fa-brands fa-whatsapp"></i> Buy Now via WhatsApp
             </a>
           </div>
@@ -298,7 +298,7 @@
             <div class="product-price-row">
               <span class="price-current">₹499 - ₹899</span>
             </div>
-            <a href="https://wa.me/917994023463?text=Hi%20Kerala%20Herbs!%20I%27d%20like%20to%20order%20NUTRI%20HAIR%20OIL.%20Please%20share%20details%20on%20price%20and%20delivery%20for%2050%20ML%20%28%E2%82%B9499%29%20or%20100%20ML%20%28%E2%82%B9899%29." target="_blank" class="btn btn-whatsapp" id="btn-buy-nutrihair">
+            <a href="#" class="btn btn-whatsapp order-trigger" id="btn-buy-nutrihair" data-product="NUTRI HAIR OIL" data-number="917994023463" data-options="50 ML Bottle - ₹499,100 ML Bottle - ₹899">
               <i class="fa-brands fa-whatsapp"></i> Buy Now via WhatsApp
             </a>
           </div>
@@ -332,7 +332,7 @@
               <span class="offer-price-original">₹2,500</span>
               <span class="offer-price-save">Save 20%</span>
             </div>
-            <a href="https://wa.me/919074399057?text=Hi%20Kerala%20Herbs!%20I%27d%20like%20to%20order%20the%203-Pack%20Herbal%20Wellness%20Combo%20%282%20GLU-VON%20%2B%201%20Pure%20Glow%20for%20%E2%82%B91999%29.%20Please%20share%20payment%20and%20delivery%20details." target="_blank" class="btn btn-whatsapp" style="width: 100%; text-align: center; justify-content: center;">
+            <a href="#" class="btn btn-whatsapp order-trigger" data-product="Herbal Wellness Combo (3-Pack)" data-number="919074399057" data-options="Combo Package (2 GLU-VON + 1 Pure Glow) - ₹1999" style="width: 100%; text-align: center; justify-content: center;">
               <i class="fa-brands fa-whatsapp"></i> Order Combo on WhatsApp
             </a>
           </div>
@@ -352,7 +352,7 @@
               <span class="offer-price-original">₹2,000</span>
               <span class="offer-price-save">Save 25%</span>
             </div>
-            <a href="https://wa.me/919074399057?text=Hi%20Kerala%20Herbs!%20I%27d%20like%20to%20order%20the%202-Pack%20Radiance%20Duo%20Combo%20%281%20GLU-VON%20%2B%201%20Pure%20Glow%20for%20%E2%82%B91499%29.%20Please%20share%20payment%20and%20delivery%20details." target="_blank" class="btn btn-whatsapp" style="width: 100%; text-align: center; justify-content: center;">
+            <a href="#" class="btn btn-whatsapp order-trigger" data-product="Radiance Duo Combo (2-Pack)" data-number="919074399057" data-options="Combo Package (1 GLU-VON + 1 Pure Glow) - ₹1499" style="width: 100%; text-align: center; justify-content: center;">
               <i class="fa-brands fa-whatsapp"></i> Order Combo on WhatsApp
             </a>
           </div>
@@ -447,6 +447,70 @@
       </div>
     </div>
   </div>
+
+  <!-- Order Form Modal -->
+  <div id="orderModal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(8, 28, 21, 0.6); backdrop-filter: blur(4px); z-index: 9999; align-items: center; justify-content: center;">
+    <div class="modal-content" style="background: var(--bg-white); border-radius: var(--radius-md); width: 90%; max-width: 500px; padding: 32px; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); position: relative; animation: modalFadeIn 0.3s ease-out; box-sizing: border-box; max-height: 90vh; overflow-y: auto;">
+      <button id="closeModalBtn" style="position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 1.5rem; color: var(--text-muted); cursor: pointer; transition: var(--transition);"><i class="fa-solid fa-xmark"></i></button>
+      
+      <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--primary-dark); margin-top: 0; margin-bottom: 8px;">Order Details</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Please fill in your shipping details below to complete your order on WhatsApp.</p>
+      
+      <form id="orderForm">
+        <!-- Hidden input for target WhatsApp number -->
+        <input type="hidden" id="modalTargetNumber">
+        
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 6px; color: var(--primary-dark);">Selected Product</label>
+          <input type="text" id="modalProductName" readonly style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--bg-cream); font-weight: 600; color: var(--text-dark); cursor: not-allowed; box-sizing: border-box;">
+        </div>
+
+        <div id="modalOptionContainer" style="margin-bottom: 16px; display: none;">
+          <label style="display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 6px; color: var(--primary-dark);">Choose Size / Course</label>
+          <select id="modalProductOption" style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.95rem; background: var(--bg-white); font-family: inherit; color: var(--text-dark); box-sizing: border-box;"></select>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 6px; color: var(--primary-dark);">Quantity</label>
+          <select id="modalQuantity" style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.95rem; background: var(--bg-white); font-family: inherit; color: var(--text-dark); box-sizing: border-box;">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 20px 0;">
+
+        <div style="margin-bottom: 16px;">
+          <label for="customerName" style="display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 6px; color: var(--primary-dark);">Full Name *</label>
+          <input type="text" id="customerName" required placeholder="Enter your full name" style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.95rem; font-family: inherit; color: var(--text-dark); box-sizing: border-box;">
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <label for="customerPhone" style="display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 6px; color: var(--primary-dark);">Phone Number *</label>
+          <input type="tel" id="customerPhone" required placeholder="Enter your WhatsApp number" style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.95rem; font-family: inherit; color: var(--text-dark); box-sizing: border-box;">
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <label for="customerAddress" style="display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 6px; color: var(--primary-dark);">Delivery Address *</label>
+          <textarea id="customerAddress" required rows="3" placeholder="Enter complete shipping address with pincode" style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.95rem; font-family: inherit; color: var(--text-dark); resize: vertical; line-height: 1.5; box-sizing: border-box;"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-whatsapp" style="width: 100%; justify-content: center; padding: 14px 20px; font-size: 1rem; border-radius: var(--radius-sm); border: none; cursor: pointer;">
+          <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i> Proceed to WhatsApp Order
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <style>
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 
   <script src="script.js"></script>
 </body>
